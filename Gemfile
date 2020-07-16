@@ -10,6 +10,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'devise'
+gem 'gravtastic'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
