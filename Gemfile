@@ -8,6 +8,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
 
 gem 'carrierwave'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -31,6 +33,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
