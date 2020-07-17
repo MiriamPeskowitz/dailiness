@@ -1,10 +1,17 @@
 language: ruby
-rvm: 
-  - 2.6.6
-script:
- — bundle install — jobs=3 — retry=3
- — bundle exec rake db:create
- — bundle exec rake db:migrate
- — bundle exec rspec
-
- 
+rvm:
+- 2.6.6
+script: "— bundle install — jobs=3 — retry=3 — bundle exec rake db:create — bundle
+  exec rake db:migrate — bundle exec rspec"
+deploy:
+  provider: cloudfoundry
+  api: cf target
+  username: miriam5000
+  password:
+    secure: 0IF6pmx7tEzrlQzRGMnhZoJgLOGOEaugOF8WImP5k1RHDm9Nh42BBbe5RhSLPh7lrPf7rqbkc7gBrN+ZTlum6256ipBmCEo2yZBWgNkXoMARofQUeSukh724eRlFNvBegjs51gxdrUaa9GC1e/13q3LBkgLS6l/hgrUGhKQy8qmgBfxS2P8KfkVSDJTRbBlUaboHwUWIXHOCHkL6YP3OuKmviSN+FkP5RyK4pcDlqFTzO+cA1Axx5K5YC2WP//0vMlampYXCnnWlMyQU5JlyRy5IKa3o8Iqel3SMuOm6NHaYEG5Tw5bZz2tn2K+xxPQVgPEQoQe7zIIYKrpXWMkIViQPHod9qK6X0/SJYMNy13j1bvXYKwi0RoGcETMFzR8MQQi23m2DDmn9M1Og8I7EkQ3hcUMbGKX9rSo4yV7ANHLrnk8jGdaEqV1ia2oBmFXCH6lFDL9i8j1sUi5FVTjUYK7uZqLsbleQQTD9hwnThZ7dx7EO/fp85NK1O6I9dKOu3lcxkd+I3RZ2nbU8o/ouKQEQiWnPKiM1ZunMIOZZ/xH9DMyFHAPTTCqp+VkJKZllcazcI3pdkdJ30wVAztdr3NP/ZzOnyLnaJmzRwUEYVldqnD914ZNemvA70G2cAY5UJNkgO6Z0AK/yx74h5lrVg1D/dQUkdLxgjZ/njMWjTqQ=
+  organization: ''
+  space: ''
+  on:
+    repo: MiriamPeskowitz/dailiness
+    branch: travis
+  skip_cleanup: 'true'
